@@ -1,0 +1,44 @@
+{
+  "schedules": [
+    {
+      "id": 1,
+      "date": "2018-12-06",
+      "jobId": 1
+    },
+    {
+      "id": 2,
+      "date": "2020-04-02",
+      "jobId": 2
+    }
+  ],
+  "workers": [
+    {
+      "id": -1,
+      "name": "N/A"
+    },
+    {
+      "id": 1,
+      "name": "Seçgin"
+    },
+    {
+      "id": 2,
+      "name": "James"
+    },
+    {
+      "name": "william",
+      "id": 3
+    }
+  ],
+  "jobs": [
+    {
+      "id": 1,
+      "name": "A work",
+      "workerId": 2
+    },
+    {
+      "id": 2,
+      "name": "Another work",
+      "workerId": 1
+    }
+  ]
+}
