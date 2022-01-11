@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Job scheduler
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was created by using React, Redux, Redux Toolkit, Material UI and json-server.
 
-## Available Scripts
+Usage
+-----
+To bootstrap the job scheduler, run the following command:
+```
+yarn
+yarn start
+```
 
-In the project directory, you can run:
+Runs the application in development mode.
 
-### `yarn start`
+### Schedule a job
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To schedule a job, click one of the on the `+` buttons in the desired job's row and desired time's column.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![App](/screenshots/app.png "App")
 
-### `yarn test`
+A schedule dialog will appear. Select a worker and a shift and click `Schedule`.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Schedule a job](/screenshots/schedule-a-job.png "Schedule a job")
 
-### `yarn build`
+### Create a worker
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Click `CREATE A NEW WORKER` buton in the `Schedule` dialog.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Cancel a job
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Click on the `x` button in the label of the job you want to cancel.
 
-### `yarn eject`
+### Edit a worker
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Click on the the label of the worker you want to edit.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Edit a job type
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Click on top of the job type you want to edit.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Add a job type
 
-## Learn More
+Click `ADD JOB` button on the bottom left of the calendar.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+API
+----
+For more information about the API, please refer to the [API documentation](./API.md).
