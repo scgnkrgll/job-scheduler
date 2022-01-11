@@ -162,7 +162,11 @@ const Calendar: FC = () => {
         ))}
         <Grid container spacing={2} columns={8}>
           <Grid item xs={1}>
-            <Button startIcon={<Add />} sx={{ width: "100%" }}>
+            <Button
+              startIcon={<Add />}
+              sx={{ width: "100%" }}
+              onClick={() => uiActions.openNewJobDialog && uiActions.openNewJobDialog()}
+            >
               Add job
             </Button>
           </Grid>

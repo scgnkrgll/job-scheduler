@@ -15,6 +15,9 @@ const SchedulerPage: FC = () => {
     openJobEditDialog: (id) => {
       navigate(`/schedules/job/edit/${id}`)
     },
+    openNewJobDialog: () => {
+      navigate(`/schedules/job/new`)
+    },
   }
 
   return (
@@ -37,6 +40,17 @@ const SchedulerPage: FC = () => {
               onHide={() => {
                 navigate("/schedules")
               }}
+            />
+          }
+        />
+        <Route
+          path="/schedules/job/new"
+          element={
+            <JobEditDialog
+              onHide={() => {
+                navigate("/schedules")
+              }}
+              create
             />
           }
         />
