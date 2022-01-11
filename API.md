@@ -38,8 +38,8 @@ GET /schedules
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| date_gte | `String` | <p> Only return schedules that start on or after the specified date. The date must be in the format <code>YYYY-MM-DD</code>. </p> |
-| date_lte | `String` | <p> Only return schedules that start on or before the specified date. The date must be in the format <code>YYYY-MM-DD</code>. </p> |
+| date_gte | `String` | <p> Only return schedules that start on or after the specified date. The date must be ISO 8601 formatted. </p> <p>Example: <code>2019-01-01</code> </p> |
+| date_lte | `String` | <p> Only return schedules that start on or before the specified date. The date must be ISO 8601 formatted. </p> <p>Example: <code>2019-01-01</code> </p> |
 
 ## <a name='Schedule-a-job'></a> Schedule a job
 [Back to top](#top)
@@ -54,8 +54,9 @@ POST /schedules
 
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
-| jobId | `Number` | <p>The job id that is going to be scheduled.</p> |
-| date | `String` | <p>The date must be in the format <code>YYYY-MM-DD</code>. </p> |
+| workerId | `String` | <p> The ID of the worker to schedule. </p> |
+| date | `String` | <p>The date must be ISO 8601 formatted. </p> <p>Example: <code>2019-01-01</code> </p> |
+| shift | `String` | <p>The shift must be one of <code>morning</code>, or <code>evening</code>. </p> |
 
 ## <a name='Unschedule-a-job'></a> Unschedule a job
 [Back to top](#top)
@@ -110,6 +111,7 @@ POST /workers
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 |name | `String` | <p>The name of the worker.</p> |
+|job | `Number` | <p>The job id that the worker is going to be assigned to.</p> |
 
 ## <a name='Edit-worker'></a> Edit Worker
 [Back to top](#top)
@@ -159,20 +161,6 @@ DELETE /workers/:id
 GET /jobs
 ```
 
-### Query Parameters
-
-| Name     | Value       | Description                           |
-|----------|------------|---------------------------------------|
-|_expand| `worker ` | <p>Expand the worker and schedule objects.</p> |
-|_expand| `schedule` | <p>Expand the schedule object.</p> |
-
-### Examples
-CURL Example:
-
-```curl
-curl -X GET http://localhost:3000/jobs?_expand=worker&_expand=schedule
-```
-
 ## <a name='Create-a-job'></a> Create a Job
 [Back to top](#top)
 
@@ -186,7 +174,6 @@ POST /jobs
 | Name     | Type       | Description                           |
 |----------|------------|---------------------------------------|
 |name | `String` | <p>The name of the job.</p> |
-|workerId | `Number` | <p>The worker id that is going to be assigned to the job. -1 means no worker, can not be empty.</p> |
 
 ## <a name='Edit-a-job'></a> Edit a Job
 [Back to top](#top)

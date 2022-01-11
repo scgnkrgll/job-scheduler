@@ -2,43 +2,65 @@
   "schedules": [
     {
       "id": 1,
-      "date": "2018-12-06",
-      "jobId": 1
+      "date": "2022-01-10",
+      "shift": "morning",
+      "workerId": 1
     },
     {
       "id": 2,
-      "date": "2020-04-02",
-      "jobId": 2
+      "date": "2022-01-12",
+      "shift": "morning",
+      "workerId": 1
+    },
+    {
+      "id": 3,
+      "date": "2022-01-14",
+      "shift": "morning",
+      "workerId": 1
+    },
+    {
+      "id": 4,
+      "date": "2022-01-11",
+      "shift": "evening",
+      "workerId": 2
+    },
+    {
+      "id": 5,
+      "date": "2022-01-13",
+      "shift": "evening",
+      "workerId": 2
+    },
+    {
+      "id": 6,
+      "date": "2022-01-15",
+      "shift": "evening",
+      "workerId": 2
     }
   ],
   "workers": [
     {
-      "id": -1,
-      "name": "N/A"
-    },
-    {
       "id": 1,
-      "name": "Seçgin"
+      "jobId": 1,
+      "name": "Vanessa"
     },
     {
       "id": 2,
+      "jobId": 3,
       "name": "James"
-    },
-    {
-      "name": "william",
-      "id": 3
     }
   ],
   "jobs": [
     {
       "id": 1,
-      "name": "A work",
-      "workerId": 2
+      "name": "Barista"
     },
     {
       "id": 2,
-      "name": "Another work",
-      "workerId": 1
+      "name": "Security"
+    },
+    {
+      "id": 3,
+      "name": "Waiter"
     }
   ]
 }
