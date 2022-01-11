@@ -103,7 +103,12 @@ const Calendar: FC = () => {
           <React.Fragment key={job.id}>
             <Grid container spacing={2} columns={8}>
               <Grid item xs={1}>
-                <Button endIcon={<Edit />} sx={{ height: "100%", width: "100%" }} color="inherit">
+                <Button
+                  endIcon={<Edit />}
+                  sx={{ height: "100%", width: "100%" }}
+                  color="inherit"
+                  onClick={() => uiActions.openJobEditDialog && uiActions.openJobEditDialog(job.id)}
+                >
                   {job.name}
                 </Button>
               </Grid>
