@@ -5,6 +5,7 @@ export interface ISchedulerActionsContext {
   openJobEditDialog: (id: string | number) => void
   openNewJobDialog: () => void
   openNewWorkerDialog: () => void
+  openWorkerEditDialog: (id: string | number) => void
 }
 export const SchedulerActionsProvider: FC<{ value: ISchedulerActionsContext }> = ({ children, value }) => {
   return <SchedulerActionsContext.Provider value={value}>{children}</SchedulerActionsContext.Provider>

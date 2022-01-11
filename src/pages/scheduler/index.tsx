@@ -22,6 +22,9 @@ const SchedulerPage: FC = () => {
     openNewWorkerDialog: () => {
       navigate(`/schedules/worker/new`)
     },
+    openWorkerEditDialog: (id) => {
+      navigate(`/schedules/worker/edit/${id}`)
+    },
   }
 
   return (
@@ -66,6 +69,16 @@ const SchedulerPage: FC = () => {
                 navigate("/schedules")
               }}
               create
+            />
+          }
+        />
+        <Route
+          path="/schedules/worker/edit/:id"
+          element={
+            <WorkerEditDialog
+              onHide={() => {
+                navigate("/schedules")
+              }}
             />
           }
         />

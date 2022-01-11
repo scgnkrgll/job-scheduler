@@ -139,6 +139,7 @@ const Calendar: FC = () => {
                           color={schedule!.shift === "morning" ? "primary" : "secondary"}
                           label={<Typography>{worker?.name}</Typography>}
                           onDelete={() => dispatch(deleteScheduleAsync(schedule!.id))}
+                          onClick={() => uiActions.openWorkerEditDialog && uiActions.openWorkerEditDialog(worker!.id)}
                         />
                         <Typography variant="caption">{schedule!.shift}</Typography>
                       </Box>
