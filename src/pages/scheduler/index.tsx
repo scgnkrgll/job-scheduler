@@ -2,6 +2,7 @@ import { FC } from "react"
 import { Route, useNavigate, Routes } from "react-router-dom"
 import ScheduleEditDialog from "./schedule-edit-dialog"
 import JobEditDialog from "./job-edit-dialog"
+import WorkerEditDialog from "./worker-edit-dialog"
 import CalendarPage from "./CalendarPage"
 import { ISchedulerActionsContext, SchedulerActionsProvider } from "./SchedulerActionsContext"
 
@@ -17,6 +18,9 @@ const SchedulerPage: FC = () => {
     },
     openNewJobDialog: () => {
       navigate(`/schedules/job/new`)
+    },
+    openNewWorkerDialog: () => {
+      navigate(`/schedules/worker/new`)
     },
   }
 
@@ -47,6 +51,17 @@ const SchedulerPage: FC = () => {
           path="/schedules/job/new"
           element={
             <JobEditDialog
+              onHide={() => {
+                navigate("/schedules")
+              }}
+              create
+            />
+          }
+        />
+        <Route
+          path="/schedules/worker/new"
+          element={
+            <WorkerEditDialog
               onHide={() => {
                 navigate("/schedules")
               }}

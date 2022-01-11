@@ -19,6 +19,7 @@ import { createScheduleAsync, Schedule } from "../../../state/schedules"
 import { fetchWorkersAsync, workersSelector } from "../../../state/workers"
 import { useAppDispatch, useAppSelector } from "../../../state"
 import { FormInputDropdown } from "../../../Components/FormInputs/FormInputDropdown"
+import { useSchedulerActions } from "../SchedulerActionsContext"
 
 const schema = yup.object().shape({
   workerId: yup.number().required(),
@@ -27,6 +28,8 @@ const schema = yup.object().shape({
 
 const ScheduleEditDialog: FC<{ onHide: () => void }> = ({ onHide }) => {
   const { jobId, date } = useParams<{ jobId: string; date: string }>()
+
+  const uiActions = useSchedulerActions()
 
   const methods = useForm({
     defaultValues: {
@@ -73,7 +76,9 @@ const ScheduleEditDialog: FC<{ onHide: () => void }> = ({ onHide }) => {
             <Divider>or</Divider>
           </Grid>
           <Grid item xs={12} justifyContent="center" display="flex">
-            <Button>Create a new worker</Button>
+            <Button onClick={() => uiActions.openNewWorkerDialog && uiActions.openNewWorkerDialog()}>
+              Create a new worker
+            </Button>
           </Grid>
           <Grid item xs={12}>
             <FormInputDropdown
